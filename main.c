@@ -54,7 +54,7 @@ int main(){
     }
 
     if(Transaction!='O'&&Transaction!='B'&&Transaction!='D'&&Transaction!='W'&&Transaction!='C'&&Transaction!='I'&&Transaction!='P'&&Transaction!='E'){
-      printf("invaild command! \n");
+      printf("invaild command!\n");
   }
   }
 
