@@ -4,6 +4,11 @@ double bank[3][50];
 
 void openAccount(double amount)
 {
+    if(amount<0)
+    {
+        printf("cannot enter negative number! \n");
+        return;
+    }
     int i;
     for (i = 0; i < 50; i++)
     {
@@ -132,3 +137,6 @@ void closeAccounts()
     }
     printf("All accounts are closed! \n");
 }
+
+
+

@@ -1,29 +1,37 @@
 #include <stdio.h>
+#include <string.h>
 #include "myBank.h"
 
 int main()
 {
-  char Transaction;
+  char Transaction[9999];
+  Transaction[1] = '\0';
   while (1)
   {
     printf("\nPlease choose a transaction type: \n");
     printf(" O-Open Account\n B-Balance Inquiry\n D-Deposit\n W-Withdrawal\n C-Close Account\n I-Interest\n P-Print\n E-Exit\n");
-    scanf(" %c", &Transaction);
-    if (Transaction == 'O')
+    scanf("%s", Transaction);
+    if(Transaction[1]!='\0')
+    {
+      Transaction[0]='\0';
+      Transaction[1]='\0';
+      printf("you wrote too many arguments!\n");
+    }
+    if (Transaction[0] == 'O')
     {
       double amount;
       printf("Please enter amount for deposit: \n");
       scanf("%lf", &amount);
       openAccount(amount);
     }
-    if (Transaction == 'B')
+    if (Transaction[0] == 'B')
     {
       int accountNum;
       printf("Please enter account number: \n");
       scanf("%d", &accountNum);
       checkBalance(accountNum);
     }
-    if (Transaction == 'D')
+    if (Transaction[0] == 'D')
     {
       int accountNum;
       printf("Please enter account number: \n");
@@ -31,7 +39,7 @@ int main()
       deposit(accountNum);
     }
 
-    if (Transaction == 'W')
+    if (Transaction[0] == 'W')
     {
       int accountNum;
       printf("Please enter account number: \n");
@@ -39,7 +47,7 @@ int main()
       withdraw(accountNum);
     }
 
-    if (Transaction == 'C')
+    if (Transaction[0] == 'C')
     {
       int accountNum;
       printf("Please enter account number: \n");
@@ -47,25 +55,25 @@ int main()
       closeAccount(accountNum);
     }
 
-    if (Transaction == 'I')
+    if (Transaction[0] == 'I')
     {
       addInterest();
     }
 
-    if (Transaction == 'P')
+    if (Transaction[0] == 'P')
     {
       printAccount();
     }
 
-    if (Transaction == 'E')
+    if (Transaction[0] == 'E')
     {
       closeAccounts();
       break;
     }
 
-    if (Transaction != 'O' && Transaction != 'B' && Transaction != 'D' && Transaction != 'W' && Transaction != 'C' && Transaction != 'I' && Transaction != 'P' && Transaction != 'E')
+    if (Transaction[0] != 'O' && Transaction[0] != 'B' && Transaction[0] != 'D' && Transaction[0] != 'W' && Transaction[0] != 'C' && Transaction[0] != 'I' && Transaction[0] != 'P' && Transaction[0] != 'E')
     {
-      printf("invaild command!\n");
+      printf("invalid command!\n");
     }
   }
 
