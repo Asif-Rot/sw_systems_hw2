@@ -41,10 +41,7 @@ int main(){
     }
 
     if(Transaction=='I'){
-      int accountNum;
-      printf("Please enter account number: \n");
-      scanf("%d", &accountNum);
-      addInterest(accountNum);
+      addInterest();
     }
 
     if(Transaction=='P'){
@@ -63,14 +60,3 @@ int main(){
 
   return 0;
 }
-      
-//   if(Transaction=='D')
-//     deposit(int accountNum);
-//   if(Transaction=='W')
-//     withrawal(int accountNum);
-//   if(Transaction=='C')
-//     closeAccount(int accountNum);
-//   if(Transaction=='I')
-//     addInterest();
-//   if(Transaction=='p')
-//     printAccount();
