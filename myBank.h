@@ -1,8 +1,8 @@
-void openAccount(double amount);
-void checkBalance(int accountNum);
-void deposit(int accountNum);
-void withdraw(int accountNum);
-void closeAccount(int accountNum);
+void openAccount();
+void checkBalance();
+void deposit();
+void withdraw();
+void closeAccount();
 void addInterest();
 void printAccount();
 void closeAccounts();
